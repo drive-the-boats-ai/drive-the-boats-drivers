@@ -99,9 +99,20 @@ int main ( void )
     
     vTaskStartScheduler();
     */
-            
+    /*        
     setupI2C();
     setupIMU();
+    */
+    struct color_BGR colors[5];
+    int i;
+    for(i = 0; i < 5; i++){
+        colors[i].brightness = 31;  //Valid range: 0-31
+        colors[i].blue = 255 * (i % 3 == 0);
+        colors[i].green = 255 * (i % 3 == 1);
+        colors[i].red = 255 * (i % 3 == 2);
+    }
+    setupSPI();
+    int errors = writeStrip(colors, 5);
     
     while ( true )
     {
