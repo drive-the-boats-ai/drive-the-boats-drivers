@@ -84,7 +84,7 @@ int main ( void )
     
     configureTmr2();
     setupRudder();
-    setupThrottle();    //Throttle does not work... unsure why
+    setupThrottle();
     
     /*
     //Launch tasks here
@@ -99,10 +99,10 @@ int main ( void )
     
     vTaskStartScheduler();
     */
-    /*        
+          
     setupI2C();
     setupIMU();
-    */
+    /*
     struct color_BGR colors[5];
     int i;
     for(i = 0; i < 5; i++){
@@ -113,7 +113,7 @@ int main ( void )
     }
     setupSPI();
     int errors = writeStrip(colors, 5);
-    
+    */
     while ( true )
     {
         asm("nop");
